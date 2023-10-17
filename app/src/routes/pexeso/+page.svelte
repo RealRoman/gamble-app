@@ -21,12 +21,12 @@
         if (bet > user.balance) {
             return
         }
-        
+        console.log(sumBet)
         tileMap[y_pos * pole.length + x_pos].turned = true
         const data = {
             x_pos,
             y_pos,
-            bet
+            bet: sumBet
         }
         const request = await fetch('http://127.0.0.1:8000/pexeso/guess/', {
             method: 'POST',
